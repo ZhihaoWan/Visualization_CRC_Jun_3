@@ -1,25 +1,110 @@
-import logo from './logo.svg';
+//import React from "react";
+import Plot from "react-plotly.js";
 import './App.css';
+import React, { useEffect, useState } from 'react'
+//import { Form, Input, InputNumber, Radio, Modal, Cascader ,Tree} from 'antd'
+import axios from 'axios'
 
-function App() {
+// export default UserTree;
+function App(){
+  const[arrx,setarrx]=useState([]);
+  const[arry,setarry]=useState([]);
+
+  useEffect(()=>{
+    const AUTH_TOKEN = 'Token 0bfda2118118484d52aeec86812269aadeb37c67';
+    axios.defaults.baseURL = 'https://voyages3-api.crc.rice.edu'; //'http://127.0.0.1:8000'
+    axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    var data = new FormData();
+    // data.append("voyage_itinerary__imp_principal_region_slave_dis__region","Barbados")
+    data.append('groupby_fields','voyage_ship__rig_of_vessel__name')
+    data.append('value_field_tuple','voyage_slaves_numbers__imp_total_num_slaves_disembarked')
+    data.append('value_field_tuple','sum')
+    data.append('cachename','voyage_export')
+
+    axios.post('/voyage/groupby', data)
+    .then(function (response) {
+      //console.log(response.data)
+      // console.log(Object.keys(Object.values(response.data)[0]));
+      // console.log(Object.values(Object.values(response.data)[0]));
+      setarrx(Object.keys(Object.values(response.data)[0]));
+      setarry(Object.values(Object.values(response.data)[0]));
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    ;
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='button_container'>
+      <Plot
+        data={[
+          {
+            x: arrx,
+            y: arry,
+            type: 'bar'
+          },
+        ]}
+      />
     </div>
-  );
+
+  )
 }
 
 export default App;
+// export default App;
+// class App extends React.Component {
+//   render() {
+//     var trace1 = {
+//       x: [1, 2, 3, 4],
+//       y: [0, 2, 3, 5],
+//       fill: 'tozeroy',
+//       type: 'scatter'
+//     };
+    
+//     var trace2 = {
+//       x: [1, 2, 3, 4],
+//       y: [3, 5, 1, 7],
+//       fill: 'tonexty',
+//       type: 'scatter'
+//     };
+//     return (
+//       <div>
+//         <Plot
+//           data={[
+//             {
+//               x: ['giraffes', 'orangutans', 'monkeys'],
+//               y: [20, 14, 23],
+//               type: 'bar'
+//             },
+//           ]}
+//         />
+//         <Plot
+//           data = {[
+//             {
+//               values: [19, 26, 55],
+//               labels: ['Residential', 'Non-Residential', 'Utility'],
+//               type: 'pie'
+//             }
+//           ]}
+//           layout = {{
+//             height: 400,
+//             width: 500
+//           }}
+//         />
+//         <Plot
+//           data = {[trace1, trace2]}
+//         />
+//       </div>
+        
+//     );
+//   }
+// }
+
+
+
+
+
+
