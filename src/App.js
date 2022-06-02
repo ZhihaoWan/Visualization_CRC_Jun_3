@@ -9,9 +9,11 @@ import axios from 'axios'
 function App(){
   const[arrx,setarrx]=useState([]);
   const[arry,setarry]=useState([]);
+  const[donutarrx,setdonutarrx]=useState([]);
+  const[donutarry,setdonutarry]=useState([]);
 
   useEffect(()=>{
-    const AUTH_TOKEN = 'Token 0bfda2118118484d52aeec86812269aadeb37c67';
+    const AUTH_TOKEN = 'Token ed5a8659480a0a9c58cafe40313eb97bbbcb2b8c';
     axios.defaults.baseURL = 'https://voyages3-api.crc.rice.edu'; //'http://127.0.0.1:8000'
     axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
     axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -22,6 +24,12 @@ function App(){
     data.append('agg_fn','sum')
     data.append('cachename','voyage_bar_and_donut_charts')
 
+    var data2 = new FormData();
+    data2.append('groupby_fields','voyage_ship__imputed_nationality__name')
+    data2.append('groupby_fields','voyage_dates__imp_length_home_to_disembark')
+    data2.append('agg_fn','sum')
+    data2.append('cachename','voyage_bar_and_donut_charts')
+
     axios.post('/voyage/groupby', data)
     .then(function (response) {
       // console.log(response.data)
@@ -29,17 +37,27 @@ function App(){
       // console.log(Object.values(Object.values(response.data)[0]));
       setarrx(Object.keys(Object.values(response.data)[0]));
       setarry(Object.values(Object.values(response.data)[0]));
-
-
     })
     .catch(function (error) {
       console.log(error);
     });
+    ;
 
+    axios.post('/voyage/groupby', data2)
+    .then(function (response) {
+      // console.log(response.data)
+      // console.log(Object.keys(Object.values(response.data)[0]));
+      // console.log(Object.values(Object.values(response.data)[0]));
+      setdonutarrx(Object.keys(Object.values(response.data)[0]));
+      setdonutarry(Object.values(Object.values(response.data)[0]));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
     ;
   },[])
-  return (
 
+  return (
     <div className='button_container'>
       <Plot
         data={[
@@ -50,11 +68,23 @@ function App(){
           },
         ]}
       />
+      <Plot
+        data = {[
+          {
+            values: donutarry,
+            labels: donutarrx,
+            type: 'pie'
+          }
+        ]}
+        layout = {{
+          height: 400,
+          width: 500
+        }}
+      />
     </div>
 
   )
 }
-
 export default App;
 // export default App;
 // class App extends React.Component {
