@@ -17,16 +17,16 @@ function App(){
     axios.defaults.headers.post['Content-Type'] = 'application/json';
     var data = new FormData();
     // data.append("voyage_itinerary__imp_principal_region_slave_dis__region","Barbados")
-    data.append('groupby_fields','voyage_ship__rig_of_vessel__name')
+    data.append('groupby_fields','voyage_itinerary__imp_principal_port_slave_dis__geo_location__name')
     data.append('groupby_fields','voyage_slaves_numbers__imp_total_num_slaves_disembarked')
     data.append('agg_fn','sum')
     data.append('cachename','voyage_bar_and_donut_charts')
 
     axios.post('/voyage/groupby', data)
     .then(function (response) {
-      console.log(response.data)
-      console.log(Object.keys(Object.values(response.data)[0]));
-      console.log(Object.values(Object.values(response.data)[0]));
+      // console.log(response.data)
+      // console.log(Object.keys(Object.values(response.data)[0]));
+      // console.log(Object.values(Object.values(response.data)[0]));
       setarrx(Object.keys(Object.values(response.data)[0]));
       setarry(Object.values(Object.values(response.data)[0]));
 
