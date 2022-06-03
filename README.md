@@ -1,115 +1,70 @@
-# Visualization 
-> Team: Jiran Yang, Jason Fang, Gaoyuan Chen, Zhihao Wan
-[Link](https://agile-hollows-95336.herokuapp.com/): https://agile-hollows-95336.herokuapp.com/
+# Getting Started with Create React Main
 
-### TODO:
- - [ ] Routing
-       - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `mmmm.js`
- - [x] Extract/ Create a new environment varibles, local x/y varibles to static file
-       - Extract all those static into `vars.js`, `.env`, and import them into the main component.
- - [x] OPTION call (labels in dropdown)
-       - Replace the complex drop down name to simple flat dropdown name.
- - [x] General README, Heroku Final Deployment and Heroku Configuration
-       - Add token, base URL to Heroku Configuration.
-<!-- ### Consider about:
-- [ ] Secret Token (For every single user)
-   -->
+This project was bootstrapped with [Create React Main](https://github.com/facebook/create-react-app).
 
-### How it works?
-**1. Clone the project to local**
+## Available Scripts
 
-```
-git clone [project link]
-```
+In the project directory, you can run:
 
-**2. Run `npm install`** 
-It installs all the packages that project need. If install process failed, you clould check as follows:
+### `npm start`
 
-**React-Route**
-```javaScript
-npm install --save react-router-dom
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**React-Plotly**
-```javaScript
-npm install react-plotly.js plotly.js
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-**Axios**
-```javaScript
-npm install axios
-```
+### `npm test`
 
-**dotenv**
-```javaScript
-npm install dotenv
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**Material UI**
-```javaScript
-npm install @mui/material @emotion/react @emotion/styled
-```
+### `npm run build`
 
-**3. Authorization**
-In the `.env`, you could change `REACT_APP_AUTHTOKEN` 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-**4. Run Application**
-```javaScript
-npm start
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-------
-### Deployment 
-**Deployment Process:**
-```shell
-git clone [this project]
-```
-```shell
-cd [this project]
-```
-```shell
-git init 
-```
-```shell
-heroku create -b https://github.com/mars/create-react-app-buildpack.git
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```shell
-# Configiration Process
-# For more detials, check https://devcenter.heroku.com/articles/config-vars
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-git add .
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```
-git commit -m "React Projct is deployed on Heroku"
-```
-```
-git push heroku master
-```
-```
-heroku open
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-**Configiration Process**
-```shell
-# View current config var values
-heroku config
-# Example:
-# GITHUB_USERNAME: Jiran
-# REACT_APP_AUTHTOKEN: 'Token asdbchuawjfv112baisuyofgkue'    
-# REACT_APP_BASEURL: https://voyages3-api.crc.rice.edu
-```
+## Learn More
 
-```shell
-# Set all config vars example:
-heroku config:set GITHUB_USERNAME=joesmith
-heroku config:set REACT_APP_AUTHTOKEN='Token asdbchuawjfv112baisuyofgkue'   
-heroku config:set REACT_APP_BASEURL='https://voyages3-api.crc.rice.edu'
-```
-```shell
-# Remove config vars example:
-heroku config:unset GITHUB_USERNAME
-```
+You can learn more in the [Create React Main documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web Main
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
