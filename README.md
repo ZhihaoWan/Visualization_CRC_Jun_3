@@ -1,9 +1,9 @@
 # Visualization 
 > Team: Jiran Yang, Jason Fang, Gaoyuan Chen, Zhihao Wan
-[Link](https://agile-hollows-95336.herokuapp.com/): https://agile-hollows-95336.herokuapp.com/
+[Link](https://desolate-retreat-07875.herokuapp.com/): [https://agile-hollows-95336.herokuapp.com/](https://desolate-retreat-07875.herokuapp.com/)
 
 ### TODO:
- - [ ] Routing
+ - [x] Routing
        - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `mmmm.js`
  - [x] Extract/ Create a new environment varibles, local x/y varibles to static file
        - Extract all those static into `vars.js`, `.env`, and import them into the main component.
