@@ -39,6 +39,11 @@ npm install react-plotly.js plotly.js
 npm install axios
 ```
 
+**dotenv**
+```javaScript
+npm install npm install dotenv
+```
+
 **3. Authorization**
 In the `.env`, you could change `REACT_APP_AUTHTOKEN` 
 
