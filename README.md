@@ -3,9 +3,9 @@
 
 ### TODO:
  - [ ] Routing
-       - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `mmm.js`
+       - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `mmmm.js`
  - [ ] Extract/ Create a new environment varibles, local x/y varibles to static file
-       - Extract all those static into `***.js`, `$$$.js`, and import them into the main component.
+       - Extract all those static into `vars.js`, `.env`, and import them into the main component.
  - [ ] OPTION call (labels in dropdown)
        - Replace the complex drop down name to simple flat dropdown name.
  - [ ] General README, Heroku Final Deployment and Heroku Configuration
@@ -54,22 +54,31 @@ npm start
 **Deployment Process:**
 ```shell
 git clone [this project]
-
+```
+```shell
 cd [this project]
-
+```
+```shell
 git init 
-
+```
+```shell
 heroku create -b https://github.com/mars/create-react-app-buildpack.git
+```
 
+```shell
 # Configiration Process
 # For more detials, check https://devcenter.heroku.com/articles/config-vars
 
 git add .
+```
 
+```
 git commit -m "React Projct is deployed on Heroku"
-
+```
+```
 git push heroku master
-
+```
+```
 heroku open
 ```
 
