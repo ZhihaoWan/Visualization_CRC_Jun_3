@@ -1,17 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Bar from './Bar';
-import Pie from './Pie'
-import Scatter from './Scatter'
+import Main from './Main';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Scatter from "./Scatter";
+import Pie from "./Pie";
+import Bar from "./Bar";
+import { QueryClient, QueryClientProvider} from 'react-query'
 
+
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Pie />
-    <Scatter />
-    <Bar />
+      <QueryClientProvider client={queryClient}>
+          {/*<Scatter />*/}
+          <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<Main />} />
+                  <Route path="scatter" element={<Scatter />} />
+                  <Route path="bar" element={<Bar />} />
+                  <Route path="pie" element={<Pie />} />
+              </Routes>
+          </BrowserRouter>
+      </QueryClientProvider>
   </React.StrictMode>
 );
 
