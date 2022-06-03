@@ -1,14 +1,15 @@
 # Visualization 
 > Team: Jiran Yang, Jason Fang, Gaoyuan Chen, Zhihao Wan
+[Link](https://agile-hollows-95336.herokuapp.com/): https://agile-hollows-95336.herokuapp.com/
 
 ### TODO:
  - [ ] Routing
        - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `mmmm.js`
- - [ ] Extract/ Create a new environment varibles, local x/y varibles to static file
+ - [x] Extract/ Create a new environment varibles, local x/y varibles to static file
        - Extract all those static into `vars.js`, `.env`, and import them into the main component.
- - [ ] OPTION call (labels in dropdown)
+ - [x] OPTION call (labels in dropdown)
        - Replace the complex drop down name to simple flat dropdown name.
- - [ ] General README, Heroku Final Deployment and Heroku Configuration
+ - [x] General README, Heroku Final Deployment and Heroku Configuration
        - Add token, base URL to Heroku Configuration.
 <!-- ### Consider about:
 - [ ] Secret Token (For every single user)
