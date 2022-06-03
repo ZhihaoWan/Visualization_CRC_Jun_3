@@ -4,7 +4,7 @@
 
 ### TODO:
  - [x] Routing
-       - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `mmmm.js`
+       - Apply `React-Route`. (You may install it before run this application). This file logic is stroed in `index.js`
  - [x] Extract/ Create a new environment varibles, local x/y varibles to static file
        - Extract all those static into `vars.js`, `.env`, and import them into the main component.
  - [x] OPTION call (labels in dropdown)
