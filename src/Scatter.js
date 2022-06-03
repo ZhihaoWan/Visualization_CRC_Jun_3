@@ -17,9 +17,8 @@ import Radio from '@mui/material/Radio';
 
 const option_url = '/voyage/' + '?hierarchical=false' // labels in dropdowns
 
-const AUTH_TOKEN = 'Token 30da72e68ebc2beeaaf69a15dcfc56844fb7e05d';
-
-axios.defaults.baseURL = 'https://voyages3-api.crc.rice.edu'; //'change to environment setting'
+const AUTH_TOKEN = process.env.REACT_APP_AUTHTOKEN;
+axios.defaults.baseURL = process.env.REACT_APP_BASEURL; 
 axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 var scatter_plot_x_vars=[
