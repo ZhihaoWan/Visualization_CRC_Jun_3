@@ -42,13 +42,12 @@ npm install axios
 
 **dotenv**
 ```javaScript
-npm install npm install dotenv
+npm install dotenv
 ```
 
 **Material UI**
 ```javaScript
 npm install @mui/material @emotion/react @emotion/styled
-
 ```
 
 **3. Authorization**
