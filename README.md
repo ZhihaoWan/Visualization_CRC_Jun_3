@@ -1,6 +1,6 @@
 # Visualization 
 > Team: Jiran Yang, Jason Fang, Gaoyuan Chen, Zhihao Wan
-[Link](https://desolate-retreat-07875.herokuapp.com/): [https://agile-hollows-95336.herokuapp.com/](https://desolate-retreat-07875.herokuapp.com/)
+[Link](https://desolate-retreat-07875.herokuapp.com/): [[https://desolate-retreat-0787.herokuapp.com/](https://desolate-retreat-07875.herokuapp.com/)
 
 ### TODO:
  - [x] Routing
