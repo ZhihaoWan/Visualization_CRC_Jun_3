@@ -45,6 +45,12 @@ npm install axios
 npm install npm install dotenv
 ```
 
+**Material UI**
+```javaScript
+npm install @mui/material @emotion/react @emotion/styled
+
+```
+
 **3. Authorization**
 In the `.env`, you could change `REACT_APP_AUTHTOKEN` 
 
