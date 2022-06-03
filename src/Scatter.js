@@ -54,9 +54,6 @@ function Scatter () {
   const [plot_field, setarrx] = useState([])
   const [plot_value, setarry] = useState([])
 
-  // const [option_field, setField] = React.useState(scatter_plot_x_vars[0]);
-  // const [option_value, setValue] = React.useState(scatter_plot_y_vars[1]);
-
   const [option, setOption] = useState({
     field: scatter_plot_x_vars[0],
     value: scatter_plot_y_vars[1]
@@ -64,6 +61,10 @@ function Scatter () {
 
   const [aggregation, setAgg] = React.useState('sum');
   const {sum, average} = aggregation;
+  const [label, setLabel] = useState()
+
+  const [isLoading, setLoading] = useState(true);
+
 
   const handleChange_agg = (event) => {
     setAgg(event.target.value);
@@ -102,6 +103,22 @@ function Scatter () {
 
     }, [option.field, option.value, aggregation]);
 
+    useEffect(() => {
+      axios.options(option_url)
+        .then(function (response) {
+          
+          setLabel(response.data)
+          setLoading(false)
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    }, []
+    );
+
+    if (isLoading) {
+      return <div className="spinner"></div>;
+    }
 
     return (
       <div>
@@ -117,8 +134,8 @@ function Scatter () {
                 name="field"
               >
                 {scatter_plot_x_vars.map((option) => (
-                  <MenuItem value={option}>
-                    {option}
+                  <MenuItem key={option} value={option}>
+                    {label[option]['flatlabel']}
                   </MenuItem>
                 ))}
 
@@ -136,8 +153,8 @@ function Scatter () {
                 onChange={(event) => {handleChange(event, "value")}}
               >
                 {scatter_plot_y_vars.map((option) => (
-                  <MenuItem value={option}>
-                    {option}
+                  <MenuItem key={option} value={option}>
+                    {label[option]['flatlabel']}
                   </MenuItem>
                 ))}
 
