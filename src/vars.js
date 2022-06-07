@@ -1,4 +1,4 @@
-var bar_x_vars=[
+export var bar_x_vars=[
     'voyage_ship__imputed_nationality__name',
     'voyage_ship__rig_of_vessel__name',
     'voyage_outcome__particular_outcome__name',
@@ -23,7 +23,7 @@ var bar_x_vars=[
     'voyage_dates__voyage_completed_mm'
 ]
 
-var bar_y_abs_vars=[
+export var bar_y_vars=[
     'voyage_dates__imp_length_home_to_disembark',
     'voyage_dates__length_middle_passage_days',
     'voyage_ship__tonnage_mod',
@@ -34,7 +34,7 @@ var bar_y_abs_vars=[
     'voyage_slaves_numbers__imp_jamaican_cash_price'
 ]
 
-var donut_value_vars=[
+export  var donut_value_vars=[
     'voyage_dates__imp_length_home_to_disembark',
     'voyage_dates__length_middle_passage_days',
     'voyage_ship__tonnage_mod',
@@ -45,7 +45,7 @@ var donut_value_vars=[
     'voyage_slaves_numbers__imp_jamaican_cash_price'
 ]
 
-var donut_name_vars=[
+export var donut_name_vars=[
     'voyage_ship__imputed_nationality__name',
     'voyage_ship__rig_of_vessel__name',
     'voyage_outcome__particular_outcome__name',
@@ -63,7 +63,7 @@ var donut_name_vars=[
     'voyage_itinerary__place_voyage_ended__place',
     'voyage_itinerary__region_of_return__region'
 ]
-var scatter_plot_x_vars=[
+export var scatter_plot_x_vars=[
     'voyage_dates__imp_arrival_at_port_of_dis_yyyy',
     'voyage_dates__imp_length_home_to_disembark',
     'voyage_dates__length_middle_passage_days',
@@ -73,7 +73,7 @@ var scatter_plot_x_vars=[
     'voyage_slaves_numbers__imp_total_num_slaves_disembarked'
 ]
 
-var scatter_plot_y_vars=[
+export var scatter_plot_y_vars=[
     'voyage_slaves_numbers__imp_total_num_slaves_embarked',
     'voyage_slaves_numbers__imp_total_num_slaves_disembarked',
     'voyage_slaves_numbers__percentage_female',
